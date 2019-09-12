@@ -14,4 +14,84 @@
 			app:layout_constraintBottom_toBottomOf="parent"
 			app:layout_constraintTop_toTopOf="parent"/>
 
+	<TableLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
+
+		<TableRow
+				android:layout_width="match_parent"
+				android:layout_height="match_parent" >
+
+			<TextView
+					android:layout_weight="1"
+					android:id="@+id/labelId"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="ID:" />
+
+			<TextView
+					android:layout_weight="1"
+					android:id="@+id/tvId"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="TextView" />
+		</TableRow>
+
+		<TableRow
+				android:layout_width="match_parent"
+				android:layout_height="match_parent" >
+
+			<TextView
+					android:layout_weight="1"
+					android:id="@+id/labelCash"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="CASH:" />
+
+			<TextView
+					android:layout_weight="1"
+					android:id="@+id/tvCash"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="TextView" />
+		</TableRow>
+
+		<TableRow
+				android:layout_height="match_parent"
+				android:layout_width="match_parent">
+			<TextView
+					android:layout_weight="1"
+					android:id="@+id/labelRevenue"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="REVENUE:" />
+			<TextView
+					android:layout_weight="1"
+					android:id="@+id/tvRevenue"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="TextView"/>
+		</TableRow>
+
+		<TableRow
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
+
+			<TextView
+					android:layout_weight="1"
+					android:id="@+id/labelExpense"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="EXPENSE:"/>
+
+			<TextView
+					android:layout_weight="1"
+					android:id="@+id/tvExpense"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="TextView"/>
+		</TableRow>
+
+	</TableLayout>
+
 </LinearLayout>

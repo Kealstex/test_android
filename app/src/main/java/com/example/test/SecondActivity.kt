@@ -11,8 +11,16 @@ class SecondActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val str = intent.getStringExtra(text)
-        textView.text = str
         setContentView(R.layout.activity_second)
+        val str = intent.getStringExtra(text)
+        val argExtra= intent.extras
+        val money = argExtra?.getSerializable(Money::class.java.simpleName) as Money
+        tvCash.text= money.cash.toString()
+        tvExpense.text=money.expense.toString()
+        tvId.text=money.Id.toString()
+        tvRevenue.text=money.revenue.toString()
+
+        textView.text = str
+
     }
 }
