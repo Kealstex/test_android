@@ -2,6 +2,8 @@ package com.example.test
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Adapter
+import android.widget.ArrayAdapter
 import kotlinx.android.synthetic.main.activity_second.*
 
 class SecondActivity : AppCompatActivity() {
@@ -19,8 +21,15 @@ class SecondActivity : AppCompatActivity() {
         tvExpense.text=money.expense.toString()
         tvId.text=money.Id.toString()
         tvRevenue.text=money.revenue.toString()
-
         textView.text = str
 
+        val chose = mutableListOf<String>("Expense", "Revenue")
+
+        var adapter :ArrayAdapter<String> = ArrayAdapter(this, android.R.layout.simple_list_item_1, chose)
+        List.adapter = adapter
+        List.setOnItemClickListener{
+            parent, view, position, id ->
+            tvChose.text = chose[position]
+        }
     }
 }

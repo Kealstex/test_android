@@ -16,82 +16,97 @@
 
 	<TableLayout
 			android:layout_width="match_parent"
-			android:layout_height="match_parent">
+			android:layout_height="match_parent"
+			android:layout_weight="1">
 
 		<TableRow
 				android:layout_width="match_parent"
-				android:layout_height="match_parent" >
+				android:layout_height="match_parent">
 
 			<TextView
-					android:layout_weight="1"
 					android:id="@+id/labelId"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
+					android:layout_weight="1"
 					android:text="ID:" />
 
 			<TextView
-					android:layout_weight="1"
 					android:id="@+id/tvId"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
+					android:layout_weight="1"
 					android:text="TextView" />
 		</TableRow>
 
 		<TableRow
 				android:layout_width="match_parent"
-				android:layout_height="match_parent" >
+				android:layout_height="match_parent">
 
 			<TextView
-					android:layout_weight="1"
 					android:id="@+id/labelCash"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
+					android:layout_weight="1"
 					android:text="CASH:" />
 
 			<TextView
-					android:layout_weight="1"
 					android:id="@+id/tvCash"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
+					android:layout_weight="1"
 					android:text="TextView" />
 		</TableRow>
 
 		<TableRow
-				android:layout_height="match_parent"
-				android:layout_width="match_parent">
+				android:layout_width="match_parent"
+				android:layout_height="match_parent">
+
 			<TextView
-					android:layout_weight="1"
 					android:id="@+id/labelRevenue"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:text="REVENUE:" />
-			<TextView
 					android:layout_weight="1"
+					android:text="REVENUE:" />
+
+			<TextView
 					android:id="@+id/tvRevenue"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:text="TextView"/>
+					android:layout_weight="1"
+					android:text="TextView" />
 		</TableRow>
 
 		<TableRow
-			android:layout_width="match_parent"
-			android:layout_height="match_parent">
+				android:layout_width="match_parent"
+				android:layout_height="match_parent">
 
 			<TextView
-					android:layout_weight="1"
 					android:id="@+id/labelExpense"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:text="EXPENSE:"/>
+					android:layout_weight="1"
+					android:text="EXPENSE:" />
 
 			<TextView
-					android:layout_weight="1"
 					android:id="@+id/tvExpense"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:text="TextView"/>
+					android:layout_weight="1"
+					android:text="TextView" />
 		</TableRow>
-
 	</TableLayout>
+	<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text=""
+			android:id="@+id/tvChose">
+
+	</TextView>
+	<ListView
+			android:id="@+id/List"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_weight="1">
+	</ListView>
 
 </LinearLayout>
