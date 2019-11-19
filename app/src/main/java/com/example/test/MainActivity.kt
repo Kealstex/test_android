@@ -21,7 +21,6 @@ class MainActivity:  AppCompatActivity() {
     fun onSecondActivity(view: View){
         val secondIntent = Intent(this, SecondActivity::class.java)
         secondIntent.putExtra(SecondActivity.text,  textview.text)
-        secondIntent.putExtra(Money::class.java.simpleName, Money(1,1f,1f,1f))
         startActivity(secondIntent)
     }
 
