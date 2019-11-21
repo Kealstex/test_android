@@ -34,7 +34,8 @@
 					android:id="@+id/tvId"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:layout_weight="1" />
+					android:layout_weight="1"
+					android:inputType="numberDecimal"/>
 		</TableRow>
 
 		<TableRow
@@ -52,7 +53,8 @@
 					android:id="@+id/tvCash"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:layout_weight="1" />
+					android:layout_weight="1"
+					android:inputType="numberDecimal" />
 		</TableRow>
 
 		<TableRow
@@ -70,7 +72,8 @@
 					android:id="@+id/tvRevenue"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:layout_weight="1" />
+					android:layout_weight="1"
+					android:inputType="numberDecimal" />
 		</TableRow>
 
 		<TableRow
@@ -88,7 +91,8 @@
 					android:id="@+id/tvExpense"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:layout_weight="1" />
+					android:layout_weight="1"
+					android:inputType="numberDecimal"/>
 		</TableRow>
 
 		<TableRow

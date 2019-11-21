@@ -18,8 +18,6 @@ class SecondActivity : AppCompatActivity() {
         setContentView(R.layout.activity_second)
         val str = intent.getStringExtra(text)
         val argExtra= intent.extras
-
-
         DBHandler = DataBaseHandler(this)
 
         val chose = mutableListOf<String>("Expense", "Revenue")
@@ -33,13 +31,14 @@ class SecondActivity : AppCompatActivity() {
     }
 
     fun insertData(view: View){
-        val db = DBHandler.readAllMoney()
         val cash = this.tvCash.text.toString().toFloat()
         val revenue = this.tvRevenue.text.toString().toFloat()
         val id =  this.tvId.text.toString().toInt()
         val expense = this.tvExpense.text.toString().toFloat()
 
-        DBHandler.insertData(Money(id, revenue, expense, cash))
+        DBHandler.insertData(Money(id, revenue, expense, cash, 1, "name"))
+
+        val db = DBHandler.readAllMoney()
         tvRevenue.text.clear()
         tvCash.text.clear()
         tvId.text.clear()
@@ -47,5 +46,7 @@ class SecondActivity : AppCompatActivity() {
 
     }
 
-
+    fun deleteData(view: View){
+        DBHandler.clear();
+    }
 }
