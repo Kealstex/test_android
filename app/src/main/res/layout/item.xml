@@ -1,37 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-		xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
 	<data>
-		<import type="com.example.test.Converter"/>
-		<variable name="name" type="String"/>
 		<variable
 				name="money"
 				type="com.example.test.Money" />
-		<variable
-				name="handler"
-				type="com.example.test.DataBaseHandler" />
 	</data>
 
 	<LinearLayout
-			android:id="@+id/activity_second"
 			android:layout_width="match_parent"
-			android:layout_height="match_parent"
-			android:orientation="vertical">
-
-		<TextView
-				android:id="@+id/textView"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:text="@{name}"
-				app:layout_constraintBottom_toBottomOf="parent"
-				app:layout_constraintTop_toTopOf="parent" />
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:padding="16dp">
 
 		<TableLayout
 				android:layout_width="match_parent"
-				android:layout_height="match_parent"
-				android:layout_weight="1">
+				android:layout_height="match_parent">
 
 			<TableRow
 					android:layout_width="match_parent"
@@ -49,7 +33,7 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:layout_weight="1"
-						android:text="@={money.name}"
+						android:text="@{money.name}"
 						android:inputType="textPersonName" />
 			</TableRow>
 
@@ -69,7 +53,7 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:layout_weight="1"
-						android:text="@={Converter.FloatToString(money.cost)}"
+						android:text="@{Converter.FloatToString(money.cost)}"
 						android:inputType="numberDecimal" />
 			</TableRow>
 
@@ -89,7 +73,7 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:layout_weight="1"
-						android:text="@={Converter.IntToString(money.flow)}"
+						android:text="@{Converter.IntToString(money.flow)}"
 						android:inputType="number" />
 			</TableRow>
 
@@ -109,24 +93,10 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:layout_weight="1"
-						android:text="@={Converter.IntToString(money.time)}"
+						android:text="@{Converter.IntToString(money.time)}"
 						android:inputType="numberSigned" />
 			</TableRow>
 
-			<TableRow
-					android:layout_width="match_parent"
-					android:layout_height="match_parent">
-
-				<Button
-						android:onClick="@{() ->handler.insertData(money) }"
-						android:text="Add" />
-
-				<Button
-						android:onClick="@{() ->handler.viewData(money)}"
-						android:text="View" />
-			</TableRow>
-
 		</TableLayout>
-
 	</LinearLayout>
 </layout>
