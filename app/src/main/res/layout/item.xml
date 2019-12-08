@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-	<data>
+   <data>
 		<variable
 				name="money"
 				type="com.example.test.Money" />
 	</data>
 
-	<LinearLayout
+<LinearLayout
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:orientation="horizontal"
 			android:padding="16dp">
 
-		<TableLayout
+<!--		<TableLayout
 				android:layout_width="match_parent"
 				android:layout_height="match_parent">
 
@@ -97,6 +97,6 @@
 						android:inputType="numberSigned" />
 			</TableRow>
 
-		</TableLayout>
+		</TableLayout> -->
 	</LinearLayout>
 </layout>

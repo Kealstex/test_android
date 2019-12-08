@@ -1,11 +1,12 @@
-package com.example.test
+package com.example.test.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ArrayAdapter
 import androidx.databinding.DataBindingUtil
+import com.example.test.DataBaseHandler
+import com.example.test.Money
+import com.example.test.R
 import com.example.test.databinding.ActivitySecondBinding
-import kotlinx.android.synthetic.main.activity_second.*
 
 class SecondActivity : AppCompatActivity() {
     companion object{
@@ -19,10 +20,12 @@ class SecondActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         DBHandler = DataBaseHandler(this)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_second)
+        binding = DataBindingUtil.setContentView(this,
+            R.layout.activity_second
+        )
         binding.name = "Polina"
 
-        binding.money = Money(12,12f,12,"111")
+        binding.money = Money(12, 12f, 12, "111")
         binding.lifecycleOwner = this
         binding.handler = DBHandler
 
