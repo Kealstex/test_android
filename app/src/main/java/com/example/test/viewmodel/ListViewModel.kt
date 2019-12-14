@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.test.model.Money
 
-class ListViewMoney : ViewModel(){
+class ListViewModel : ViewModel(){
     val moneys = MutableLiveData<List<Money>>()
     val moneyLoadError = MutableLiveData<Boolean>()
     val loading = MutableLiveData<Boolean>()
