@@ -3,29 +3,48 @@
 		xmlns:app="http://schemas.android.com/apk/res-auto"
 		xmlns:tools="http://schemas.android.com/tools">
 
-	<androidx.constraintlayout.widget.ConstraintLayout
+	<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+			android:id="@+id/refreshLayout"
 			android:layout_width="match_parent"
-			android:layout_height="match_parent"
-			tools:context=".view.ListFragment">
+			tools:context=".view.ListFragment"
+			android:layout_height="match_parent">
 
+		<androidx.constraintlayout.widget.ConstraintLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent">
 
-		<TextView
-				android:id="@+id/txtDetail"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:text="List Fragment"
-				app:layout_constraintBottom_toBottomOf="parent"
-				app:layout_constraintEnd_toEndOf="parent"
-				app:layout_constraintStart_toStartOf="parent"
-				app:layout_constraintTop_toTopOf="parent" />
+			<androidx.recyclerview.widget.RecyclerView
+					android:id="@+id/moneysList"
+					android:layout_width="0dp"
+					android:layout_height="0dp"
+					android:layout_marginStart="1dp"
+					android:layout_marginTop="1dp"
+					android:layout_marginEnd="1dp"
+					android:layout_marginBottom="1dp"
+					app:layout_constraintBottom_toBottomOf="parent"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintTop_toTopOf="parent" />
 
-		<com.google.android.material.floatingactionbutton.FloatingActionButton
-				android:id="@+id/btnToDetails"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:clickable="true"
-				android:src="@drawable/ic_details_black_24dp"
-				app:layout_constraintBottom_toBottomOf="parent"
-				app:layout_constraintEnd_toEndOf="parent" />
-	</androidx.constraintlayout.widget.ConstraintLayout>
+			<TextView
+					android:id="@+id/listError"
+					android:layout_width="220dp"
+					android:layout_height="26dp"
+					android:text="An error occured while loading data"
+					app:layout_constraintBottom_toBottomOf="@+id/moneysList"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintStart_toStartOf="@+id/moneysList"
+					app:layout_constraintTop_toTopOf="parent" />
+
+			<ProgressBar
+					android:id="@+id/loadingView"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					app:layout_constraintBottom_toBottomOf="parent"
+					app:layout_constraintEnd_toEndOf="@+id/moneysList"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintTop_toTopOf="parent" />
+		</androidx.constraintlayout.widget.ConstraintLayout>
+
+	</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </layout>

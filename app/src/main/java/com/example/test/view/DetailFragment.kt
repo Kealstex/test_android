@@ -30,12 +30,6 @@ class DetailFragment : Fragment() {
 
         arguments?.let {
             moneyuuid = DetailFragmentArgs.fromBundle(it).moneyUuid
-            textView3.text = moneyuuid.toString()
-        }
-
-        btnToList.setOnClickListener{
-            val action = DetailFragmentDirections.actionDetailFragmentToListFragment()
-            Navigation.findNavController(it).navigate(action)
         }
     }
 }

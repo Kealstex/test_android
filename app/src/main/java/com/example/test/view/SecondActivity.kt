@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import com.example.test.DataBaseHandler
-import com.example.test.Money
+import com.example.test.model.Money
 import com.example.test.R
 import com.example.test.databinding.ActivitySecondBinding
 
@@ -25,7 +25,7 @@ class SecondActivity : AppCompatActivity() {
         )
         binding.name = "Polina"
 
-        binding.money = Money(12, 12f, 12, "111")
+        binding.money = Money(12, 1, 12f, 12, "111")
         binding.lifecycleOwner = this
         binding.handler = DBHandler
 

@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteException
 import android.database.sqlite.SQLiteOpenHelper
 import android.widget.Toast
+import com.example.test.model.Money
 
 class DataBaseHandler (var context: Context): SQLiteOpenHelper(context, DATABASE_NAME, null,SHEMA ){
     override fun onCreate(db: SQLiteDatabase?) {
@@ -71,7 +72,7 @@ class DataBaseHandler (var context: Context): SQLiteOpenHelper(context, DATABASE
             return ArrayList()
         }
 
-        var id: Int
+        var id: Int = 12
         var cost: Float
         var isRevenue: Int
         var name: String
@@ -83,7 +84,15 @@ class DataBaseHandler (var context: Context): SQLiteOpenHelper(context, DATABASE
                 time = cursor.getInt(cursor.getColumnIndex(COL_TIME))
                 name = cursor.getString(cursor.getColumnIndex(COL_NAME))
 
-                moneys.add(Money(isRevenue, cost, time,name))
+                moneys.add(
+                    Money(
+                        id,
+                        isRevenue,
+                        cost,
+                        time,
+                        name
+                    )
+                )
                 cursor.moveToNext()
             }
         }

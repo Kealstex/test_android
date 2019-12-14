@@ -8,7 +8,7 @@
 		<variable name="name" type="String"/>
 		<variable
 				name="money"
-				type="com.example.test.Money" />
+				type="com.example.test.model.Money" />
 		<variable
 				name="handler"
 				type="com.example.test.DataBaseHandler" />

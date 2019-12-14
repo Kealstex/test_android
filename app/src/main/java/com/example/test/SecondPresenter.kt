@@ -1,5 +1,7 @@
 package com.example.test
 
+import com.example.test.model.Money
+
 class SecondPresenter(val db: DataBaseHandler) {
 
     fun insertData(money: Money) {
