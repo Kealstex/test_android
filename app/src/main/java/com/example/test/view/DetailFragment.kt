@@ -10,7 +10,6 @@ import androidx.navigation.Navigation
 
 import com.example.test.R
 import kotlinx.android.synthetic.main.fragment_detail.*
-import kotlinx.android.synthetic.main.fragment_list.*
 
 /**
  * A simple [Fragment] subclass.
@@ -28,14 +27,14 @@ class DetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        arguments?.let {
+            moneyuuid = DetailFragmentArgs.fromBundle(it).moneyUuid
+            textView3.text = moneyuuid.toString()
+        }
+
         btnToList.setOnClickListener{
             val action = DetailFragmentDirections.actionDetailFragmentToListFragment()
-
-            arguments?.let {
-                moneyuuid = DetailFragmentArgs.fromBundle(it).moneyUuid
-                txtDetail.text = moneyuuid.toString()
-            }
-
             Navigation.findNavController(it).navigate(action)
         }
     }
