@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
 		xmlns:app="http://schemas.android.com/apk/res-auto"
 		android:id="@+id/navigation"
-		app:startDestination="@id/listFragment">
+		app:startDestination="@id/profileFragment">
 
 	<fragment
 			android:id="@+id/listFragment"
@@ -27,5 +27,13 @@
 				android:name="MoneyUuid"
 				android:defaultValue="0"
 				app:argType="integer" />
+	</fragment>
+	<fragment
+			android:id="@+id/profileFragment"
+			android:name="com.example.test.view.ProfileFragment"
+			android:label="Профиль" >
+		<action
+				android:id="@+id/action_to_listFragment"
+				app:destination="@id/listFragment" />
 	</fragment>
 </navigation>

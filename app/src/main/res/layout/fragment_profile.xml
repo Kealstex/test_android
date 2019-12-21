@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:tools="http://schemas.android.com/tools">
+
+	<data>
+
+	</data>
+
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="vertical">
+
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="0dp"
+				android:layout_weight="1"
+				android:orientation="vertical">
+
+			<TextView
+					android:id="@+id/textView5"
+					style="@style/itemProfileHText"
+					android:layout_width="match_parent"
+					android:layout_height="0dp"
+					android:layout_weight="1"
+					android:text="Время:" />
+
+			<TextView
+					android:id="@+id/lblTime"
+					style="@style/itemProfile"
+					android:layout_width="match_parent"
+					android:layout_height="0dp"
+					android:layout_weight="2"
+					android:text="TextView"
+					android:textColor="@color/colorLimeGreen" />
+		</LinearLayout>
+
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="0dp"
+				android:layout_weight="1"
+				android:orientation="vertical">
+
+			<TextView
+					style="@style/itemProfileHText"
+					android:layout_width="match_parent"
+					android:layout_height="0dp"
+					android:layout_weight="1"
+					android:text="Доход:" />
+
+			<TextView
+					android:id="@+id/lblRevenue"
+					style="@style/itemProfile"
+					android:layout_width="match_parent"
+					android:layout_height="0dp"
+					android:layout_weight="2"
+					android:textColor="@color/colorLimeGreen" />
+
+		</LinearLayout>
+
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="0dp"
+				android:layout_weight="1"
+				android:orientation="vertical">
+
+			<TextView
+					style="@style/itemProfileHText"
+					android:layout_width="match_parent"
+					android:layout_height="0dp"
+					android:layout_weight="1"
+					android:text="Расход:" />
+
+			<TextView
+					android:id="@+id/lblExpense"
+					style="@style/itemProfile"
+					android:layout_width="match_parent"
+					android:layout_height="0dp"
+					android:layout_weight="2"
+					android:textColor="@color/colorOrangeSoda" />
+		</LinearLayout>
+
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="0dp"
+				android:layout_weight="1"
+				android:orientation="vertical">
+
+			<TextView
+					style="@style/itemProfileHText"
+					android:layout_width="match_parent"
+					android:layout_height="0dp"
+					android:layout_weight="1"
+					android:text="Поток:" />
+
+			<TextView
+					android:id="@+id/lblCash"
+					style="@style/itemProfile"
+					android:layout_width="match_parent"
+					android:layout_height="0dp"
+					android:layout_weight="2"
+					android:textColor="@color/colorLimeGreen" />
+		</LinearLayout>
+	</LinearLayout>
+</layout>

@@ -3,4 +3,10 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="colorMoonlessNight">#2F2B32</color>
+    <color name="colorLimeGreen">#8FA327</color>
+    <color name="colorDarkLimeGreen">#585E1A</color>
+    <color name="colorWhiteDesert">#FAF8ED</color>
+    <color name="colorOrangeSoda">#F95A37</color>
+    <color name="colorPurple">#4D2C91</color>
 </resources>

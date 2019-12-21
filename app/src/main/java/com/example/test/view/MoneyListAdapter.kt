@@ -1,6 +1,4 @@
 package com.example.test.view
-
-import android.annotation.SuppressLint
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
@@ -31,7 +29,9 @@ class MoneyListAdapter(val moneyList: ArrayList<Money>) : RecyclerView.Adapter<M
         holder.view.time.text = moneyList[position].time.toString()
 
         if(moneyList[position].flow == 1)
-            holder.view.cost.setTextColor(Color.GREEN)
+        {
+            holder.view.cost.setTextColor(Color.parseColor("#A7BF2E"))
+        }
 
         holder.view.setOnClickListener{
             Navigation.findNavController(it).navigate(ListFragmentDirections.actionListFragmentToDetailFragment())
