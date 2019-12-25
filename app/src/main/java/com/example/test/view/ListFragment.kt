@@ -38,6 +38,14 @@ class ListFragment : Fragment() {
             adapter = moneyListAdapter
         }
 
+        refreshLayout.setOnRefreshListener {
+            moneysList.visibility = View.GONE
+            listError.visibility = View.GONE
+            loadingView.visibility = View.VISIBLE
+            viewModel.refresh()
+            refreshLayout.isRefreshing = false
+        }
+
         observeViewModel()
     }
 
@@ -63,6 +71,7 @@ class ListFragment : Fragment() {
                     moneysList.visibility = View.GONE
         }
         }
-        })
+        }
+        )
     }
 }

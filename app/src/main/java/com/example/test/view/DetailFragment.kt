@@ -34,10 +34,10 @@ class DetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel = ViewModelProviders.of(this).get(DetailViewModel::class.java)
-        viewModel.fetch()
         arguments?.let {
             moneyuuid = DetailFragmentArgs.fromBundle(it).moneyUuid
         }
+        viewModel.fetch(moneyuuid)
 
         observeViewModel()
     }
@@ -53,6 +53,8 @@ class DetailFragment : Fragment() {
                     moneyCost.setTextColor(Color.GREEN)
                 }
                 moneyTime.text = money.time.toString()
+
+
             }
         })
     }

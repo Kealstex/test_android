@@ -1,5 +1,7 @@
 package com.example.test.view
+
 import android.graphics.Color
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,8 +11,9 @@ import com.example.test.R
 import com.example.test.model.Money
 import kotlinx.android.synthetic.main.item.view.*
 
-class MoneyListAdapter(val moneyList: ArrayList<Money>) : RecyclerView.Adapter<MoneyListAdapter.MoneyViewHolder>() {
-    fun updateMoneyList(newMoneyList: List<Money>){
+class MoneyListAdapter(val moneyList: ArrayList<Money>) :
+    RecyclerView.Adapter<MoneyListAdapter.MoneyViewHolder>() {
+    fun updateMoneyList(newMoneyList: List<Money>) {
         moneyList.clear()
         moneyList.addAll(newMoneyList)
         notifyDataSetChanged()
@@ -28,13 +31,14 @@ class MoneyListAdapter(val moneyList: ArrayList<Money>) : RecyclerView.Adapter<M
         holder.view.cost.text = moneyList[position].cost.toString()
         holder.view.time.text = moneyList[position].time.toString()
 
-        if(moneyList[position].flow == 1)
-        {
+        if (moneyList[position].flow == 1) {
             holder.view.cost.setTextColor(Color.parseColor("#A7BF2E"))
         }
 
-        holder.view.setOnClickListener{
-            Navigation.findNavController(it).navigate(ListFragmentDirections.actionListFragmentToDetailFragment())
+        holder.view.setOnClickListener {
+            val action = ListFragmentDirections.actionListFragmentToDetailFragment()
+                .setMoneyUuid(moneyList[position]._uuid)
+            Navigation.findNavController(it).navigate(action)
         }
     }
 

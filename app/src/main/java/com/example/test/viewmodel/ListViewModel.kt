@@ -1,29 +1,99 @@
 package com.example.test.viewmodel
 
+import android.app.Application
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.test.model.Money
+import com.example.test.model.MoneyDatabase
+import com.example.test.model.MoneysAPIService
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.observers.DisposableSingleObserver
+import io.reactivex.schedulers.Schedulers
+import kotlinx.coroutines.launch
 
-class ListViewModel : ViewModel(){
+class ListViewModel (application: Application) : BaseViewModel(application){
+
+    private val moneysAPIService = MoneysAPIService()
+    private val disposable =CompositeDisposable()
+
     val moneys = MutableLiveData<List<Money>>()
     val moneyLoadError = MutableLiveData<Boolean>()
     val loading = MutableLiveData<Boolean>()
 
     fun refresh(){
-        val mon1 = Money(1,1,1f,3,"Бассейн")
-        val mon2 = Money(2,2,1f,56,"Сон")
-        val mon3 = Money(3,1,13232.31f,14,"Кухня")
-        val mon5 = Money(3,2,1f,14,"Отдых")
+        fetchFromDatabase()
+    }
 
-        val mon6 = Money(3,1,1f,20,"Работм")
+    private fun fetchFromDatabase(){
+        loading.value = true
+        /*disposable.add(
+            moneysAPIService.getMoneys()
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeWith(object : DisposableSingleObserver<List<Money>>() {
+                    override fun onSuccess(t: List<Money>) {
+                        storeMoneysLocally(t)
+                    }
 
-        val mon7 = Money(3,2,123.32f,20,"Учёба")
+                    override fun onError(e: Throwable) {
+                        moneyLoadError.value = true
+                        loading.value = false
+                        e.printStackTrace()
+                    }
+                })
 
-        val mon8 = Money(3,1,120.32f,12,"Покупки")
-        val list = arrayListOf<Money>(mon1, mon2, mon3, mon5, mon6, mon7, mon8)
+        )*/
+        getMoneys()
+    }
 
-        moneys.value = list
+    private fun  moneysRetrieved(moneysList: List<Money>){
+        moneys.value = moneysList
         moneyLoadError.value = false
         loading.value = false
+    }
+
+    /*private fun storeMoneysLocally(list: List<Money>){
+        launch{
+            val dao = MoneyDatabase(getApplication()).moneyDao()
+            dao.deleteAllMoneys()
+            val result = dao.insertAll(*list.toTypedArray())
+            var i =0
+            while (i < list.size){
+                list[i]._uuid = result[i].toInt()
+                ++i
+            }
+            moneysRetrieved(list)
+        }
+    }*/
+
+    private fun insertMoney(list: Money){
+        launch {
+            val dao = MoneyDatabase(getApplication()).moneyDao()
+            dao.insert(list)
+            val newList = dao.getAllMoneys()
+            moneysRetrieved(newList)
+        }
+    }
+
+    private fun getMoneys(){
+        launch{
+            val dao = MoneyDatabase(getApplication()).moneyDao()
+            val result = dao.getAllMoneys()
+            moneysRetrieved(result)
+        }
+    }
+
+    private fun sortByNameDesc(){
+        launch{
+            val dao = MoneyDatabase(getApplication()).moneyDao()
+            val result = dao.sortNameDesc()
+            moneysRetrieved(result)
+        }
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        disposable.clear()
     }
 }

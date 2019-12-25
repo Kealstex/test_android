@@ -1,14 +1,19 @@
 package com.example.test.viewmodel
 
+import android.app.Application
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.test.model.Money
+import com.example.test.model.MoneyDatabase
+import kotlinx.coroutines.launch
 
-class DetailViewModel : ViewModel() {
+class DetailViewModel(application: Application) : BaseViewModel(application) {
     val moneyLiveData = MutableLiveData<Money>()
 
-    fun fetch(){
-        val mon1 = Money(1,1,1f,1,"name1")
-        moneyLiveData.value = mon1
+    fun fetch(uuid: Int){
+        launch {
+            val mon1 = MoneyDatabase(getApplication()).moneyDao().getMoney(uuid)
+            moneyLiveData.value = mon1
+        }
     }
 }
