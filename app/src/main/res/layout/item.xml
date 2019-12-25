@@ -3,9 +3,21 @@
 		xmlns:app="http://schemas.android.com/apk/res-auto"
 		xmlns:tools="http://schemas.android.com/tools">
 
+	<data>
+		<import type="com.example.test.Utils.Utils"/>
+		<variable
+				name="money"
+				type="com.example.test.model.Money" />
+
+		<variable
+				name="listener"
+				type="com.example.test.view.MoneyClickListener" />
+	</data>
+
 	<LinearLayout
 			android:layout_width="match_parent"
 			android:layout_height="125dp"
+			android:onClick="@{listener::onMoneyClicked}"
 			android:layout_weight="4"
 			android:background="@drawable/shadow"
 			android:gravity="center_vertical"
@@ -13,26 +25,33 @@
 			android:padding="8dp">
 
 		<TextView
+				android:id="@+id/moneyId"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@{String.valueOf(money._uuid)}"
+				android:visibility="gone" />
+
+		<TextView
 				android:id="@+id/name"
 				style="@style/Title"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:text="MoneyName" />
+				android:text="@{money.name}" />
 
 		<TextView
 				android:id="@+id/time"
 				style="@style/Text"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:text="time" />
+				android:text="@{money.time.toString()}" />
 
 		<TextView
 				android:id="@+id/cost"
 				style="@style/Text"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:text="cost"
-				android:textColor="@color/colorOrangeSoda" />
+				android:text="@{money.cost.toString()}"
+				android:textColor="@{ Utils.isGreen(money.cost)? @color/colorLimeGreen : @color/colorOrangeSoda}" />
 
 	</LinearLayout>
 </layout>
