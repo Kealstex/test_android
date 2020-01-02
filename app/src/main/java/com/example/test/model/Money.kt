@@ -7,9 +7,6 @@ import com.google.gson.annotations.SerializedName
 
 @Entity
 data class Money(
-    @SerializedName("_Id")
-    @ColumnInfo(name = "_Id")
-    var _Id: Int?,
 
     @SerializedName("flow")
     @ColumnInfo(name = "flow")
@@ -21,7 +18,7 @@ data class Money(
 
     @SerializedName("time")
     @ColumnInfo(name = "time")
-    var time: Int?,
+    var time: Float?,
 
     @SerializedName("name")
     @ColumnInfo(name = "name")

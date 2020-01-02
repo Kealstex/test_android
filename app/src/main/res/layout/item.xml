@@ -43,7 +43,8 @@
 				style="@style/Text"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:text="@{money.time.toString()}" />
+				android:text="@{money.time.toString()}"
+				android:textColor="@{ Utils.isGreen(money.time)? @color/colorLimeGreen : @color/colorOrangeSoda}" />
 
 		<TextView
 				android:id="@+id/cost"

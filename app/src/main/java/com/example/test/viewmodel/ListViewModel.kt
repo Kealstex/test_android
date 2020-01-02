@@ -2,14 +2,10 @@ package com.example.test.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.example.test.model.Money
 import com.example.test.model.MoneyDatabase
 import com.example.test.model.MoneysAPIService
-import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.observers.DisposableSingleObserver
-import io.reactivex.schedulers.Schedulers
 import kotlinx.coroutines.launch
 
 class ListViewModel (application: Application) : BaseViewModel(application){
@@ -67,10 +63,10 @@ class ListViewModel (application: Application) : BaseViewModel(application){
         }
     }*/
 
-    private fun insertMoney(list: Money){
+    private fun insertMoney(item: Money){
         launch {
             val dao = MoneyDatabase(getApplication()).moneyDao()
-            dao.insert(list)
+            dao.insert(item)
             val newList = dao.getAllMoneys()
             moneysRetrieved(newList)
         }

@@ -12,7 +12,6 @@ import androidx.lifecycle.ViewModelProviders
 
 import com.example.test.R
 import com.example.test.viewmodel.DetailViewModel
-import kotlinx.android.synthetic.main.activity_second.*
 import kotlinx.android.synthetic.main.fragment_detail.*
 
 /**
@@ -50,11 +49,9 @@ class DetailFragment : Fragment() {
                 if (money.flow == 1) {
                     moneyCost.setTextColor(Color.GREEN)
                 } else {
-                    moneyCost.setTextColor(Color.GREEN)
+                    moneyCost.setTextColor(Color.RED)
                 }
                 moneyTime.text = money.time.toString()
-
-
             }
         })
     }

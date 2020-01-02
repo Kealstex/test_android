@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+		xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+
+		<EditText
+				android:id="@+id/newName"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:hint="Название" />
+
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+
+			<ToggleButton
+					android:id="@+id/tglTime"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:text="ToggleButton"
+					android:textOff="Затрата"
+					android:textOn="Доход" />
+
+			<EditText
+					android:id="@+id/newTime"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="3"
+					android:hint="Часов в неделю"
+					android:inputType="numberDecimal" />
+		</LinearLayout>
+
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+
+			<ToggleButton
+					android:id="@+id/tgCost"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:text="ToggleButton"
+					android:textOff="Затрата"
+					android:textOn="Доход" />
+
+			<EditText
+					android:id="@+id/newCost"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="3"
+					android:hint="Расход/Доход"
+					android:inputType="numberDecimal" />
+
+		</LinearLayout>
+
+		<Button
+				android:id="@+id/add_money"
+				style="@android:style/Widget.Material.Button"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:backgroundTint="@color/colorAccent"
+				android:text="Добавить"
+				tools:visibility="visible" />
+
+	</LinearLayout>
+</layout>

@@ -10,5 +10,9 @@
             android:id="@+id/listFragment"
             android:icon="@drawable/ic_cash"
             android:title="@string/Money"/>
+    <item
+        android:id="@+id/addFragment"
+        android:icon="@drawable/ic_add_black_24dp"
+        android:title="Add"/>
 
 </menu>
